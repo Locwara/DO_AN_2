@@ -8,6 +8,35 @@
     <link rel="stylesheet" href="{% static 'home/css/login.css'%}">
 </head>
 <body>
+    <div class="chualogin">
+        <!-- nếu có message từ django thì sẽ tạo ra thẻ div để chứa thông báo lỗi -->
+        {% if error %}
+            <div class="error_message">
+                {{ error }}
+            </div>
+        {% endif %}
+        <form action="" method="POST">
+            <!-- csrf_token là bắt buộc khi gửi form trong django -->
+            {% csrf_token %}
+                <div class="chuatruong">
+                    <div class="chualable">
+                        <label for=""> Username</label>
+                    </div>
+                    <div class="chuainput">
+                        <input type="text" name="username" id="">
+                    </div>
+                </div>
+                <div class="chuatruong">
+                    <div class="chualable">
+                        <label for="">password</label>
+                    </div>
+                    <div class="chuainput">
+                        <input type="text" name="password" id="">
+                    </div>
 
+                    <button type="submit"> Login </button>
+                </div>
+        </form>
+    </div>
 </body>
 </html> 

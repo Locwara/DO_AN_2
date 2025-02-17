@@ -12,6 +12,7 @@
 <body>
     <div id="container_login">
         <form action="" method="POST">
+            <!-- csrf_token là bắt buộc phải có khi gửi form trong django -->
             {% csrf_token %}
             <div id="incontainer_login">
                 <div class="chuadangkydem">

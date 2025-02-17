@@ -38,9 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'home2',
 ]
 
 MIDDLEWARE = [
+    
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -48,6 +50,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # Đây là thk app trung gian của thk home
+    'home.middleware.AuthenticationMiddleware', 
 ]
 
 ROOT_URLCONF = 'doan2.urls'
@@ -77,7 +81,7 @@ WSGI_APPLICATION = 'doan2.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "doan2_htgy",
+        "NAME": "doan2_test",
         "USER": "root",
         "PASSWORD": "",
         "HOST": "localhost",
@@ -128,3 +132,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# này dùng để khai báo file backends cho settings django để có thể sử dụng đối tượng 
+# UserClientAuthBackend có tác dụng xác thực thủ công vì UserClient không phải table user mặc định của django
+# Nên phải tự khai báo
+AUTHENTICATION_BACKENDS = [
+    'home.backends.UserClientAuthBackend',
+]
