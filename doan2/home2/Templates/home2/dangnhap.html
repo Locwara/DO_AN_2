@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'home/css/dangky.css'%}">
+</head>
+<body>
+    <div class="container">
+        <div class="chuaform">
+            <h1>Đăng nhập</h1>
+            <div class="form-group1">
+                <input type="text" name="username" id="username" placeholder="Tên đăng nhập">
+                <input type="password" name="password" id="username" placeholder="Nhập mật khẩu">
+            </div>
+            <button class="submit">Submit</button>
+            <div class="form-group2">
+                
+                <a href="#">Quên mật khẩu</a>
+            </div>
+            
+
+        </div>
+
+    </div>
+
+            
+    
+</body>
+<style>
+    h1{
+        text-align: center;
+        color:black;
+    }
+    body{
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .container{
+        max-width: 350px;
+        width: 100%;
+        padding: 20px;
+    }
+    .chuaform{
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.918);
+    border: 1px solid black;
+    background-color: rgba(100, 148, 237, 0.404);
+    }
+    .form-group2{
+    width: 100%;
+    padding: 2px;
+  
+}
+.submit{
+   
+    padding: 10px;
+    width: 50%;
+    background-color:green;
+    border:1px solid black ;
+    border-radius: 8px;
+    display: block;
+    margin: 15px auto 0;
+    
+  
+}
+.form-group1{
+    padding: 5px;
+}
+#username{
+    margin-bottom: 20px;
+    padding: 12px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid black;
+    
+
+}
+.submit:hover{
+    background-color: rgba(0, 100, 0, 0.648);
+
+   
+
+}
+.form-group2{
+    margin-top: 10px;
+}
+
+</style>
+
+
+
+</html>
